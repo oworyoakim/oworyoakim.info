@@ -1,12 +1,18 @@
 import { createStore } from 'vuex'
+import {ProfileStoreType} from "@/store/types";
 
-export default createStore({
+export default createStore<ProfileStoreType>({
   state: {
-    avatarUrl: "",
+    avatarUrl: '',
+    summary: '',
+    email: 'oworyoakim@gmail.com',
   },
   mutations: {
-    setAvatarUrl(state, payload: string) {
+    setAvatarUrl(state: ProfileStoreType, payload: string) {
       state.avatarUrl = payload;
+    },
+    setSummary(state: ProfileStoreType, payload: string) {
+      state.summary = payload;
     },
   },
   actions: {
@@ -15,6 +21,7 @@ export default createStore({
           .then((response) => response.json())
           .then((data) => {
             commit("setAvatarUrl", data.avatar_url || '');
+            commit("setSummary", data.bio || '');
           })
           .catch((error) => console.log(error))
     },

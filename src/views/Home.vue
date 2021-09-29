@@ -4,17 +4,17 @@
       <div class="d-flex flex-column justify-content-start">
         <h1>Hello,</h1>
         <h3 class="mt-2">I am <strong>Owor Yoakim</strong>.</h3>
-        <h3 class="mt-4" v-if="summary">{{summary}}</h3>
+        <h4 class="mt-4" v-if="summary">{{summary}}</h4>
         <h4 class="mt-3 fst-italic">I solve problems using software. What is yours?</h4>
       </div>
-      <div>
+      <div class="img-fluid">
         <img v-if="avatarUrl" :src="avatarUrl" class="img-fluid rounded-circle">
       </div>
     </div>
     <div class="mt-1">
       <h2><u><strong>Top Skills</strong></u></h2>
       <h4 class="fst-italic">
-        <strong>Backend:</strong> PHP/Laravel/Lumen, Node.js, C#/.Net Core
+        <strong>Backend:</strong> PHP/Laravel/Lumen, Node.js, C#/.Net Core, Integrations
       </h4>
       <h4 class="fst-italic">
         <strong>Databases:</strong> MySQl, MSSQL Server, PostgreSQL, MongoDB

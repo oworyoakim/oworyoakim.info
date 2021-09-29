@@ -1,18 +1,28 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+  <div class="d-flex flex-column justify-content-between align-items-center mt-5 mx-auto">
+    <h2>Hello,</h2>
+    <h4>I am <strong>Owor Yoakim</strong>, a Full-Stack Software Engineer!</h4>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
+import { defineComponent, ref } from 'vue';
+import {useStore} from "vuex";
 
 export default defineComponent({
   name: 'Home',
   components: {
-    HelloWorld,
+
+  },
+  setup() {
+    const avatarUrl = ref("");
+    const store = useStore();
+
+
+
+    return {
+      avatarUrl,
+    }
   },
 });
 </script>
